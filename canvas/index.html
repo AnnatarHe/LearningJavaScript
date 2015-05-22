@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<style>	</style>
+</head>
+<body>
+	<canvas id="canvas" width="1024" height="600" style="display:block;border:1px solid black;margin:50px auto;"></canvas>
+
+	<script>
+	window.onload=function(){
+		var canvas=document.getElementById('canvas');
+		var context=canvas.getContext('2d');
+
+
+		context.beginPath();//此时开始绘制路径，多个图片时候启用
+		context.moveTo(100,100);//笔尖放的位置
+		context.lineTo(550,550);//笔尖应该到达的位置
+		context.lineTo(100,550);
+		context.lineTo(100,100);
+		context.lineWidth=50;//笔的粗细
+		context.strokeStyle="#00ffaa";//笔的颜色
+		context.fillStyle="rgb(2,100,30)";//内部的颜色
+		context.fill();//内部绘制
+		context.closePath();//此时结束绘制路径，多个图片时启用
+
+		context.beginPath();
+		context.moveTo(900,600);
+		context.lineTo(100,100);
+		context.stroke();
+		context.closePath();
+		//context.stroke();//绘图操作(直线)
+	}
+	</script>
+</body>
+</html>

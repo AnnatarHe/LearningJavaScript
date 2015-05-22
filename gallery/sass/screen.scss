@@ -1,0 +1,91 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+$font-f:"Ubuntu Mono","Mircosoft YaHei";
+@import "normalize","mix";
+body{
+	background-color: #fff;
+	color: #555;
+	font-size: 14px;
+	font-family: $font-f;
+	-webkit-font-smoothing:antialiased;
+}
+.wrap{
+	width: 100%;
+	height: 600px;
+	position: absolute;
+	top: 50%;
+	margin-top: -300px;
+	background-color: #333;
+	overflow: hidden;
+	-webkit-perspective:800px;
+	.photo-center{
+	left: 50%;
+	top: 50%;
+	margin:-160px 0 0 -130px;
+	z-index: 999;
+	.photo-wrap{
+		position: absolute;
+		@include widHi(100%,100%);
+		-webkit-transform-style:preserve-3d;
+		-webkit-transition:all 1s;
+		.side{
+			-webkit-backface-visibility:hidden;
+		}
+		.side-front{
+			-webkit-transform:rotateY(0deg);
+		}
+		.side-back{
+			-webkit-transform:rotateY(180deg);
+		}
+		}
+	}
+	.photo-front{
+		.photo-wrap{
+			-webkit-transform:rotateY(0deg);
+		}
+	}
+	.photo-back{
+		.photo-wrap{
+			-webkit-transform:rotateY(180deg);
+		}
+	}
+}
+/*photo css*/
+.photo{
+	background-color: #eee;
+	@include widHi(260px,360px);
+	position: absolute;
+	z-index: 1;
+	box-shadow: 0 0 1px rgba(0,0,0,.01);
+	.side{
+		@include widHi(100%,100%);
+		background-color: #eee;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding:20px;
+		box-sizing:border-box;
+	}
+	.side-front{
+		.image{
+			@include widHi(100%,250px);
+			line-height: 250px;
+			overflow: hidden;
+			img{
+				width: 100%;
+			}
+		}
+		.caption{
+			text-align: center;
+			font-size: 16px;
+			line-height: 40px;
+		}
+	}
+	.side-back{
+		color:#666;
+		font-size: 16px;
+		line-height: 1.5em;
+	}
+}

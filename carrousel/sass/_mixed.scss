@@ -1,0 +1,7 @@
+@mixin block($wid:1000px,$heig:450px) {
+	width:$wid;
+	height:$heig;
+}
+@mixin img-btn($url){
+	background:red url($url) no-repeat center center;
+}

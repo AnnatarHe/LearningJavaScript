@@ -1,0 +1,46 @@
+.header{
+	background-color: #e3e3e3;
+	border-radius: 150px;
+}
+.container{
+	width:1000px;
+	margin:0 auto;
+}
+.left-icon{
+	float: left;
+}
+.header-search{
+	margin: 15px 40px;
+	float: left;
+}
+.clear{
+	clear: both;
+}
+.right-login,.ul-right{
+	float: right;
+}
+.ul-right{
+	width:50px;
+	margin-left: 30px;
+}
+.uncle{
+	list-style: none;
+}
+.space{
+	margin: 5px 30px;
+}
+.space a{
+	color:red;
+}
+.nav{
+	background-color: #4c4c53;
+}
+.left-video{
+	float: left;
+}
+.right-news{
+	float: right;
+}
+.video{
+	background-color: #eee;
+}

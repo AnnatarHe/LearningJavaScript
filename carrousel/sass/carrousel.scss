@@ -1,0 +1,39 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "normalize";
+@import "mixed";
+.poster-main{
+	a{
+		display: block;
+	}
+	img{
+		display: block;
+	}
+	position: relative;
+	@include block();
+	.poster-list{
+		@include block();
+		.poster-item{
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+	.poster-btn{
+		position: absolute;
+		top: 0;
+		@include block(100px);
+		z-index: 10;
+	}
+	.poster-prev-btn{
+		left: 0;
+		@include img-btn("img/btn_l.png");
+	}
+	.poster-next-btn{
+		right: 0;
+		@include img-btn("img/btn_r.png");
+	}
+}
