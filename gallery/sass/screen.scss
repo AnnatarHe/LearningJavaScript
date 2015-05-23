@@ -42,11 +42,13 @@ body{
 		}
 	}
 	.photo-front{
+		-webkit-transition:all 1s;
 		.photo-wrap{
 			-webkit-transform:rotateY(0deg);
 		}
 	}
 	.photo-back{
+		-webkit-transition:all 1s;
 		.photo-wrap{
 			-webkit-transform:rotateY(180deg);
 		}
@@ -67,6 +69,7 @@ body{
 		right: 0;
 		padding:20px;
 		box-sizing:border-box;
+		-webkit-backface-visibility:hidden;
 	}
 	.side-front{
 		.image{
