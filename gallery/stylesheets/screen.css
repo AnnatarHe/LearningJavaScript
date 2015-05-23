@@ -275,7 +275,7 @@ body {
   background-color: #fff;
   color: #555;
   font-size: 14px;
-  font-family: "Ubuntu Mono", "Mircosoft YaHei";
+  font-family: "Ubuntu Mono", "Microsoft YaHei";
   -webkit-font-smoothing: antialiased;
 }
 
@@ -304,38 +304,41 @@ body {
   height: 100%;
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 1s;
+  -webkit-transform-origin: 0% 50%;
 }
-/* line 33, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 .wrap .photo-center .photo-wrap .side {
   -webkit-backface-visibility: hidden;
 }
-/* line 36, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 .wrap .photo-center .photo-wrap .side-front {
   -webkit-transform: rotateY(0deg);
 }
-/* line 39, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 .wrap .photo-center .photo-wrap .side-back {
   -webkit-transform: rotateY(180deg);
 }
-/* line 44, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 .wrap .photo-front {
   -webkit-transition: all 1s;
 }
-/* line 46, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 .wrap .photo-front .photo-wrap {
   -webkit-transform: rotateY(0deg);
+  -webkit-transform: translate(0px, 0px) rotateY(0deg);
 }
-/* line 50, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 .wrap .photo-back {
   -webkit-transition: all 1s;
 }
-/* line 52, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 .wrap .photo-back .photo-wrap {
   -webkit-transform: rotateY(180deg);
+  -webkit-transform: translate(260px, 0px) rotateY(180deg);
 }
 
 /*photo css*/
-/* line 58, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 .photo {
   background-color: #eee;
   width: 260px;
@@ -343,8 +346,11 @@ body {
   position: absolute;
   z-index: 1;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
+  left: 50%;
+  top: 50%;
+  margin: -160px 0 0 -130px;
 }
-/* line 64, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .photo .side {
   width: 100%;
   height: 100%;
@@ -355,24 +361,24 @@ body {
   padding: 20px;
   box-sizing: border-box;
 }
-/* line 74, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 .photo .side-front .image {
   width: 100%;
   height: 250px;
   line-height: 250px;
   overflow: hidden;
 }
-/* line 78, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .photo .side-front .image img {
   width: 100%;
 }
-/* line 82, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 .photo .side-front .caption {
   text-align: center;
   font-size: 16px;
   line-height: 40px;
 }
-/* line 88, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 .photo .side-back {
   color: #666;
   font-size: 16px;
@@ -380,7 +386,7 @@ body {
 }
 
 /*btn button style*/
-/* line 95, ../sass/screen.scss */
+/* line 101, ../sass/screen.scss */
 .nav {
   width: 80%;
   height: 30px;
@@ -392,7 +398,7 @@ body {
   background-color: #fff;
   text-align: center;
 }
-/* line 105, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 .nav .i {
   width: 10%;
   height: 30px;
@@ -403,7 +409,7 @@ body {
   border-radius: 30px;
   -webkit-transform: scale(0.48);
 }
-/* line 115, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 .nav .i_current {
   -webkit-transform: scale(0.9);
 }

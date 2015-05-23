@@ -108,7 +108,7 @@ function rsort (n) {
 		_photo[s].className+=' photo-front';
 		_photo[s].style.left='';
 		_photo[s].style.top='';
-		_photo[s].style['-webkit-transform']='rotate(0deg)';
+		_photo[s].style['-webkit-transform']='rotate(0deg) scale(1.3)';
 		//推进栈里
 		photos.push(_photo[s]);
 	}
@@ -132,7 +132,7 @@ function rsort (n) {
 		//调用之前写好的random来进行范围随机数的处理
 		photo.style.left= random(ranges.left.x) + 'px';
 		photo.style.top= random(ranges.left.y) + 'px';
-		photo.style['-webkit-transform']='rotate('+random([-150,150])+'deg)';
+		photo.style['-webkit-transform']='rotate('+random([-150,150])+'deg) scale(1)';
 	}
 	for(s in photo_right)
 	{
@@ -140,7 +140,7 @@ function rsort (n) {
 		//调用之前写好的random来进行范围随机数的处理
 		photo.style.left= random(ranges.right.x) + 'px';
 		photo.style.top= random(ranges.left.y) + 'px';
-		photo.style['-webkit-transform']='rotate('+random([-150,150])+'deg)';
+		photo.style['-webkit-transform']='rotate('+random([-150,150])+'deg) scale(1)';
 	}
 
 	//控制按钮处理

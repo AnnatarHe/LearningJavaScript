@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-$font-f:"Ubuntu Mono","Mircosoft YaHei";
+$font-f:"Ubuntu Mono","Microsoft YaHei";
 @import "normalize","mix";
 body{
 	background-color: #fff;
@@ -25,32 +25,35 @@ body{
 	top: 50%;
 	margin:-160px 0 0 -130px;
 	z-index: 999;
-	.photo-wrap{
-		position: absolute;
-		@include widHi(100%,100%);
-		-webkit-transform-style:preserve-3d;
-		-webkit-transition:all 1s;
-		.side{
-			-webkit-backface-visibility:hidden;
-		}
-		.side-front{
-			-webkit-transform:rotateY(0deg);
-		}
-		.side-back{
-			-webkit-transform:rotateY(180deg);
-		}
+		.photo-wrap{
+			position: absolute;
+			@include widHi(100%,100%);
+			-webkit-transform-style:preserve-3d;
+			-webkit-transition:all 1s;
+			-webkit-transform-origin:0% 50%;
+			.side{
+				-webkit-backface-visibility:hidden;
+			}
+			.side-front{
+				-webkit-transform:rotateY(0deg);
+			}
+			.side-back{
+				-webkit-transform:rotateY(180deg);
+			}
 		}
 	}
 	.photo-front{
 		-webkit-transition:all 1s;
 		.photo-wrap{
 			-webkit-transform:rotateY(0deg);
+			-webkit-transform:translate(0px,0px) rotateY(0deg); 
 		}
 	}
 	.photo-back{
 		-webkit-transition:all 1s;
 		.photo-wrap{
 			-webkit-transform:rotateY(180deg);
+			-webkit-transform:translate(260px,0px) rotateY(180deg); 
 		}
 	}
 }
@@ -61,6 +64,9 @@ body{
 	position: absolute;
 	z-index: 1;
 	box-shadow: 0 0 1px rgba(0,0,0,.01);
+	left:50%;
+	top:50%;
+	margin:-160px 0 0 -130px;
 	.side{
 		@include widHi(100%,100%);
 		background-color: #eee;
