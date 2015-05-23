@@ -69,7 +69,6 @@ body{
 		right: 0;
 		padding:20px;
 		box-sizing:border-box;
-		-webkit-backface-visibility:hidden;
 	}
 	.side-front{
 		.image{
@@ -90,5 +89,34 @@ body{
 		color:#666;
 		font-size: 16px;
 		line-height: 1.5em;
+	}
+}
+/*btn button style*/
+.nav{
+	@include widHi(80%,30px);
+	line-height:30px;
+	position: absolute;
+	left:10%;
+	bottom:20px;
+	z-index: 999;
+	background-color:#fff;
+	text-align:center;
+	//mormalize style
+	.i{
+		@include widHi(10%,30px);
+		display: inline-block;
+		cursor: pointer;
+		background-color: #aaa;
+		text-align: center;
+		border-radius: 30px;
+		-webkit-transform: scale(.48);
+	}
+	//current here style
+	.i_current{
+		-webkit-transform: scale(.9);
+	}
+	//back style
+	.i_back{
+
 	}
 }

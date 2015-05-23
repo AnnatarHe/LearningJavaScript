@@ -354,28 +354,56 @@ body {
   right: 0;
   padding: 20px;
   box-sizing: border-box;
-  -webkit-backface-visibility: hidden;
 }
-/* line 75, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 .photo .side-front .image {
   width: 100%;
   height: 250px;
   line-height: 250px;
   overflow: hidden;
 }
-/* line 79, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .photo .side-front .image img {
   width: 100%;
 }
-/* line 83, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .photo .side-front .caption {
   text-align: center;
   font-size: 16px;
   line-height: 40px;
 }
-/* line 89, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 .photo .side-back {
   color: #666;
   font-size: 16px;
   line-height: 1.5em;
+}
+
+/*btn button style*/
+/* line 95, ../sass/screen.scss */
+.nav {
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  left: 10%;
+  bottom: 20px;
+  z-index: 999;
+  background-color: #fff;
+  text-align: center;
+}
+/* line 105, ../sass/screen.scss */
+.nav .i {
+  width: 10%;
+  height: 30px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #aaa;
+  text-align: center;
+  border-radius: 30px;
+  -webkit-transform: scale(0.48);
+}
+/* line 115, ../sass/screen.scss */
+.nav .i_current {
+  -webkit-transform: scale(0.9);
 }
