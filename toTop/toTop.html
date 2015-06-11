@@ -33,40 +33,41 @@
 		<a id="toTop" href="javascript:;">back</a>
 	</div>
 </body>
+<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
 <script>
-	window.onload=function(){
-		var bid=document.getElementById('toTop');
-		var timer=null;
-		var isTop=true;
+(function(){
+	var bid=$("#toTop");
+	var timer=null;
+	var isTop=true;
 
-		var clientHeight=document.documentElement.clientHeight;
-		/**
-		 * 滚动时触发事件
-		 * @return {} 
-		 */
-		window.onscroll=function(){
+	var clientHeight=document.documentElement.clientHeight;
+	/**
+	 * 滚动时触发事件
+	 * @return {} 
+	 */
+	window.onscroll=function(){
+		var osTop=document.documentElement.scrollTop ||document.body.scrollTop;
+		if(osTop>=clientHeight){
+			bid.show();
+		}else{
+			bid.hide();
+		}
+		if(!isTop){
+			clearInterval(timer);
+		}
+		isTop=false;
+	}
+	bid.click(function(){
+		timer=setInterval(function(){
 			var osTop=document.documentElement.scrollTop ||document.body.scrollTop;
-			if(osTop>=clientHeight){
-				bid.style.display='block';
-			}else{
-				bid.style.display='none';
-			}
-			if(!isTop){
+			var isspeed=Math.floor(-osTop/6);
+			document.documentElement.scrollTop = document.body.scrollTop = osTop + isspeed;
+			isTop=true;
+			if(osTop==0){
 				clearInterval(timer);
 			}
-			isTop=false;
-		}
-		bid.onclick=function(){
-			timer=setInterval(function(){
-				var osTop=document.documentElement.scrollTop ||document.body.scrollTop;
-				var isspeed=Math.floor(-osTop/6);
-				document.documentElement.scrollTop = document.body.scrollTop = osTop + isspeed;
-				isTop=true;
-				if(osTop==0){
-					clearInterval(timer);
-				}
-			},30);
-		}
-	}
+		},30);
+	});
+})();
 </script>
 </html>
