@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3--loading</title>
+	<style>
+		.spinner{
+			width: 40px;
+			height: 40px;
+			background-color: green;
+			border-radius: 100%;
+			margin: 100px auto;
+			-webkit-animation:fadeOut 1.0s infinite ease-in-out;
+			-o-animation:fadeOut 1.0s infinite ease-in-out;
+			animation:fadeOut 1.0s infinite ease-in-out;
+		}
+		@-webkit-keyframes fadeOut{
+			from{
+				-webkit-transform:scale(0.0);
+				-ms-transform:scale(0.0);
+				-o-transform:scale(0.0);
+				transform:scale(0.0);
+			}
+			to{
+				-webkit-transform:scale(1.0);opacity:0;
+				-ms-transform:scale(1.0);opacity:0;
+				-o-transform:scale(1.0);opacity:0;
+				transform:scale(1.0);opacity:0;
+			}
+		}
+		@keyframes fadeOut{
+			from {
+				-webkit-transform:scale(0.0);
+				-ms-transform:scale(0.0);
+				-o-transform:scale(0.0);
+				transform:scale(0.0);
+			}
+			to {
+				-webkit-transform:scale(1.0);opacity:0;
+				-ms-transform:scale(1.0);opacity:0;
+				-o-transform:scale(1.0);opacity:0;
+				transform:scale(1.0);opacity:0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- This demo using CSS3 to make a `loading` page. It's very beautiful -->
+	<div class="spinner"></div>
+</body>
+</html>

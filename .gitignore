@@ -1,3 +1,5 @@
-/gallery/images/*
-/carrousel/img/*
-/introduction/.sass-cache/*
+gallery/images/*
+carrousel/img/*
+carrousel/.idea/
+carousel/.sass-cache/
+introduction/.sass-cache/*
