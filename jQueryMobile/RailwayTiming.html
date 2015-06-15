@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Railway Timing</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.css" />
+</head>
+<body>
+    <div data-role="page" id="index">
+        <div data-role="header" data-position="fixed">
+            <h1>I'am header</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#table">
+                    <h2>hello</h2>
+                    <p>Others</p>
+                    <p class="ui-li-aside">times</p>
+                </a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#"> Setting</a></li>
+             </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-icon="arrow-l">Home</a></li>
+                    <li><a href="#form" data-icon="bars">Form</a></li>
+                    <li><a href="#" data-icon="alert">Setting</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="form">
+        <div data-role="header" data-position="fixed">
+            <h2>Header</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <form action="#" method="POST">
+                <div class="ui-field-contain">
+                    <label for="#">username</label>
+                    <input id="username" type="text" name="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="#">pwd</label>
+                    <input id="pwd" type="text" name="">
+                </div>
+           
+                <div class="ui-field-contain">
+                    <label for="#">address</label>
+                    <input id="address" type="text" name="">
+                </div>
+            </form>
+        </div>
+         <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-icon="arrow-l">Home</a></li>
+                    <li><a href="#" data-icon="bars">Form</a></li>
+                    <li><a href="#" data-icon="alert">Setting</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="table">
+        <div data-role="header" data-position="fixed">
+            <h2>header</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <table data-role="table" data-mode="reflow" class="ui-responsive table-stroke">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>project</th>
+                        <th>about</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                         <td>1</td>
+                         <td>haha</td>
+                         <td>github</td>
+                     </tr>
+                    <tr>
+                         <td>1</td>
+                         <td>haha</td>
+                         <td>github</td>
+                     </tr>
+                    <tr>
+                         <td>1</td>
+                         <td>haha</td>
+                         <td>github</td>
+                     </tr>
+                    <tr>
+                         <td>1</td>
+                         <td>haha</td>
+                         <td>github</td>
+                     </tr>
+                    <tr>
+                         <td>1</td>
+                         <td>haha</td>
+                         <td>github</td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+        <div data-role="footer">
+            <div data-role="navbar" data-position="fixed">
+                <ul>
+                    <li><a href="#index" data-icon="arrow-l">Home</a></li>
+                    <li><a href="#Form" data-icon="bars">Form</a></li>
+                    <li><a href="#" data-icon="alert">Setting</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
+<script src="http://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.js"></script>
+</body>
+</html>

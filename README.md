@@ -14,6 +14,8 @@ studying Angular.js
 Studying canvas(HTML5)
 * Carrousel:smirk:-ing   
 carrousel in web page
+* ChatRoom:smirk:-ing   
+Chat Room with jQuery.
 * CSS3_loading:flushed:-done   
 loading using CSS3.very nice
 * gallery:flushed:-done   
@@ -28,3 +30,5 @@ like `Carrousel`.
 using jQuery ToTop
 * waterfall:smirk:-ing   
 using JavaScript make waterfall page.
+* jQueryMobile:smirk:-ing   
+study jQueryMobile
