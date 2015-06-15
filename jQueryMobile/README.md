@@ -1,7 +1,7 @@
 #Notes
 ##Initial
 ```javascript
-$(document).on("pageinit","page",function(){
+$(document).on("pageinit","#page",function(){
     //do something
 });
 ```

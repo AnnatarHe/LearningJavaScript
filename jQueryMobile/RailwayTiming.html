@@ -51,6 +51,7 @@
                     <label for="#">address</label>
                     <input id="address" type="text" name="">
                 </div>
+                <button id="ajaxButton" class="ui-btn">AjaxButton</button>
             </form>
         </div>
          <div data-role="footer" data-position="fixed">
@@ -117,5 +118,20 @@
     </div>
 <script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
 <script src="http://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.js"></script>
+<script>
+    $(document).on("pageinit","#form",function(){
+        var url="http://www.corsproxy.com/www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeByTrainCode?TrainCode=G1&UserID=";
+        $("#ajaxButton").on("click",function(){
+            $.mobile.loading("show");
+            $.get(
+                url,
+                {TrainCode:"G1"},
+                function(data){
+                    cosole.log(data);
+                    $.mobile.loading("hide");
+                });
+        });
+    });
+</script>
 </body>
 </html>
