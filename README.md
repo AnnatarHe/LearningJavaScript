@@ -32,3 +32,10 @@ using jQuery ToTop
 using JavaScript make waterfall page.
 * jQueryMobile:smirk:-ing   
 study jQueryMobile
+* ChromeExt:smirk:-ing
+Chrome extensions development   
+Where am I ----IP Address   
+Get Weather ---Weather
+
+#LICENSE
+MIT

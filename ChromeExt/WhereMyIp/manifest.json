@@ -1,0 +1,22 @@
+{
+	"manifest_version":2,
+	"name":"CheckMyIpAddress",
+	"version":"1.0.0",
+	"description":"查看我的Ip地址",
+	"icon":{
+		"32":"images/favicon.ico",
+		"48":"images/72.jpg",
+		"128":"images/128.jpg"
+	},
+	"browser_action":{
+		"default_icon":{
+			"72":"images/72.jpg",
+			"128":"images/128.jpg"
+		},
+		"default_title":"CheckMyIpAddress",
+		"default_popup":"popup.html"
+	},
+	"permissions":[
+		"http://sneezryworks.sinaapp.com/ip.php"
+	]
+}
