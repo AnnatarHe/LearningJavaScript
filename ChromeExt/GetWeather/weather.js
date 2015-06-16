@@ -12,7 +12,7 @@ function httpRequest(url,callback){
 function showWeather(result){
     result = JSON.parse(result);
     var list = result.list;
-    var table = '<table class="table table-striped table-hover"><tr><th>Date</th><th>Weather</th><th>Min</th><th>Max</th></tr>';
+    var table = '<table class="table table-striped table-hover"><tr><th><i class="fa fa-calendar fa-lg"></i> Date</th><th><i class="fa fa-sun-o fa-lg"></i> Weather</th><th><i class="fa fa-arrow-down fa-lg"></i> Min</th><th><i class="fa fa-arrow-up fa-lg"></i> Max</th></tr>';
     for(var i in list)
     {
         var d=new Date(list[i].dt*1000);
