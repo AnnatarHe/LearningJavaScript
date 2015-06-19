@@ -18,6 +18,8 @@ carrousel in web page
 Chat Room with jQuery.
 * CSS3_loading:flushed:-done   
 loading using CSS3.very nice
+* crawler_nodejs:flushed:-done
+study nodejs with a small crawler
 * gallery:flushed:-done   
 using CSS3 and JavaScript.done.
 * grunt:smirk:-ing   
