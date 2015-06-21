@@ -10,7 +10,7 @@ var http = require('http')
 //引入cheerio，用来操作获取到的html进行类似jQuery的操作
 var cheerio = require('cheerio')
 //设定URL
-var url = 'http://www.imooc.com/learn/348'
+var url = 'http://www.imooc.com/learn/156'
 /**
  * 用来处理获取到的html，形成可视化的内容
  * @para html 获取到的html内容k
@@ -60,7 +60,7 @@ function printCourseData(courseInfo){
         console.log(charpterTitle + '')
 
         item.videos.forEach(function(video){
-            console.log('id is ' + video.id + '\t' + 'video Title is:' + video.title+ '\t')
+            console.log('\t' + 'ID是 ' + video.id + '\n\t\t' + '视频的名称是：' + video.title+ '\n')
         })
     })
 }
