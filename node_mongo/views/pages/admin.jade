@@ -1,0 +1,44 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			.col-md-7
+				embed(src="#{movie.flash}",allowFullScreen="true", quality="high",width="720" ,height="600", align="middle", type="application/x-shockwave-flash")
+			.col-md-5
+				form.form-horizontal(method="post",action="/admin/movie")
+					.form-group
+						label.col-sm-3.control-label(for="inputTitle") 电影名称
+						.col-sm-9
+							#inputTitle.form-control(type="text",name="movie[title]",value="#{movie.title}")
+					.form-group
+						label.col-sm-3.control-label(for="inputDirector") 导演
+						.col-sm-9
+							#inputDirector.form-control(type="text",name="movie[director]",value="#{movie.director}")
+					.form-group
+						label.col-sm-3.control-label(for="inputCountry") 国家
+						.col-sm-9
+							#inputCountry.form-control(type="text",name="movie[country]",value="#{movie.country}")
+					.form-group
+						label.col-sm-3.control-label(for="inputLanguage") 语种
+						.col-sm-9
+							#inputLanguage.form-control(type="text",name="movie[language]",value="#{movie.language}")
+					.form-group
+						label.col-sm-3.control-label(for="inputPoster") 海报地址
+						.col-sm-9
+							#inputPoster.form-control(type="text",name="movie[poster]",value="#{movie.poster}")
+					.form-group
+						label.col-sm-3.control-label(for="inputFlash") 片源地址
+						.col-sm-9
+							#inputFlash.form-control(type="text",name="movie[flash]",value="#{movie.flash}")
+					.form-group
+						label.col-sm-3.control-label(for="inputYear") 上映年代
+						.col-sm-9
+							#inputYear.form-control(type="text",name="movie[year]",value="#{movie.year}")
+					.form-group
+						label.col-sm-3.control-label(for="inputSumary") 电影简介
+						.col-sm-9
+							#inputSumary.form-control(type="text",name="movie[sumary]",value="#{movie.sumary}")
+					.form-group
+						.col-sm-offset-3.col-sm-9
+							button.btn.btn-primary(type="submit") 录入

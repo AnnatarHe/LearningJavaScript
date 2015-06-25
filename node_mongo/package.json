@@ -1,0 +1,26 @@
+{
+  "name": "node_mongo",
+  "version": "1.0.0",
+  "description": "node and mongodb to build a website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "mongodb",
+    "website"
+  ],
+  "author": "iamhele",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "express": "^4.13.0",
+    "jade": "^1.11.0",
+    "moment": "^2.10.3",
+    "mongoose": "^4.0.6"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1"
+  }
+}
