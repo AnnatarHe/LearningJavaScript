@@ -7,7 +7,7 @@ var Movie = require('./models/movie')
 var port = process.env.PORT || 3000
 var app = express()
 
-var db = mongoose.connect('mongodb://localhost:27017/movie')
+mongoose.connect('mongodb://localhost:27017/movie')
 
 app.set('views','./views/pages')
 app.set('view engine','jade')
@@ -123,6 +123,21 @@ app.post('/admin/movie/new',function(req,res){
                 console.log(err)
             }
             res.redirect('/movie/' + movie._id)
+        })
+    }
+})
+
+//DELETE method
+app.delete('/admin/list',function(req,res){
+    var id = req.query.id
+
+    if (id) {
+        Movie.remove({_id:id},function(err,movie){
+            if (err) {
+                console.log(err)
+            }else{
+                res.json({success:1})
+            }
         })
     }
 })
