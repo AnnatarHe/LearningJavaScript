@@ -12,6 +12,7 @@ var db = mongoose.connect('mongodb://localhost:27017/movie')
 app.set('views','./views/pages')
 app.set('view engine','jade')
 app.use(bodyParser())
+app.locals.moment = require('moment')
 app.use(express.static(path.join(__dirname,'bower_components')))
 app.listen(port)
 
@@ -33,7 +34,7 @@ app.get('/',function(req,res){
 //there is list page
 app.get('/admin/list',function(req,res){
     Movie.fetch(function(err,movies){
-        if (error) {
+        if (err) {
             console.log(err)
         }
         res.render('list.jade',{
@@ -43,7 +44,7 @@ app.get('/admin/list',function(req,res){
     })
 })
 //detail page
-app.get('/movies/:id',function(req,res){
+app.get('/movie/:id',function(req,res){
     var id = req.params.id
 
     Movie.findById(id,function(err,movie){
@@ -87,7 +88,7 @@ app.get('/admin/movie/update/:id',function(req,res){
 
 
 //admin post movie
-app.get('/admin/movie/new',function(req,res){
+app.post('/admin/movie/new',function(req,res){
     var id = req.body.movie._id
     var movieObj = req.body.movie
     var _movie
