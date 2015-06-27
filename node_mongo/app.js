@@ -1,3 +1,13 @@
+/*********************************************************
+ * 这是个根据慕课网《nodejs + mongodb》制作的电影网站 ****
+ *             初步接触nodejs + mongodb               ****
+ *             Mission: Movies Website                ****
+ *             Author : I don't know                  ****
+ ********************************************************/
+ /**
+  * require some dependence module
+  * like list
+  */
 var express = require('express')
 var path = require('path')
 var mongoose = require('mongoose')
@@ -7,16 +17,30 @@ var Movie = require('./models/movie')
 var port = process.env.PORT || 3000
 var app = express()
 
+//connect to mongodb
 mongoose.connect('mongodb://localhost:27017/movie')
-
+//set views directory and engine
 app.set('views','./views/pages')
 app.set('view engine','jade')
+//parser to deal static resource path
 app.use(bodyParser())
+//mangage time in views.
 app.locals.moment = require('moment')
+//use parser to connect to resource installed by bower
 app.use(express.static(path.join(__dirname,'bower_components')))
+//listen port, you know it
 app.listen(port)
-
 console.log('port ' + port + ' was listened')
+
+/*************************************************************************
+ * Router start                                                    *******
+ * @param /                     index                              *******
+ * @param /movie/:id            detail                             *******
+ * @param /admin/list           admin list like delete something   *******
+ * @param /admin/movie/update   update movie information           *******
+ * @param /admin/movie/new      add a new moive                    *******
+ ************************************************************************/
+
 //there is index page
 app.get('/',function(req,res){
     Movie.fetch(function(err,movies){
@@ -87,7 +111,7 @@ app.get('/admin/movie/update/:id',function(req,res){
 })
 
 
-//admin post movie
+//Add new movie method
 app.post('/admin/movie/new',function(req,res){
     var id = req.body.movie._id
     var movieObj = req.body.movie
