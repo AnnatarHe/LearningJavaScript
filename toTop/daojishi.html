@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>daojishi</title>
+</head>
+<body>
+	<span id="lefttime"></span>
+</body>
+<script>
+	window.onload=function(){
+		showtime();
+	}
+	function showtime(){
+		var endtime=new Date('2015/5/13,13:13:13');
+		var now =new Date();
+		var lefttime=parseInt((endtime.getTime()-now.getTime())/1000);
+		var d=parseInt(lefttime/(60*60*24));
+		var h=parseInt(lefttime/(60*60)%24);
+		var m=parseInt(lefttime/60%60);
+		var s=parseInt(lefttime%60);
+		document.getElementById('lefttime').innerHTML=d+'day'+h+'hours'+m+'minutes'+s+'seconds';
+		if (lefttime<=0) {document.getElementById('lefttime').innerHTML='';};
+		setTimeout(showtime,500);
+		}
+</script>
+</html>
