@@ -39,7 +39,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/test.css">
+    <link rel="stylesheet" href="styles/style.css">
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -53,7 +53,7 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="row">
-                <div class="col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+                <div class="col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-4">
                     <h1 class="text-primary">保卫办意见征集</h1>
                 </div>
             </div>
@@ -61,35 +61,48 @@
     </nav>
     <div class="container">
         <div class="row">
-            <form action="#" id="form" class="form from-horzional form-before" method="post">
+            <form id="form" class="form from-horzional form-before" method="post">
                 <div class="form-group">
                     <label class="col-sm-3 col-xs-3 col-md-3"><span class="glyphicon glyphicon-user"></span> 学号</label>
                     <div class="col-sm-9 col-xs-9 col-md-9">
-                    <input type="text" placeholder="请输入学号"  class="form-control" required value="" name="number">
+                        <input type="text" id="number" placeholder="请输入学号"  class="form-control" required value="" name="number">
+                    <div class="alert alert-danger" id="numberError" style="display:none">
+                        <p>学号长度不够</p>
+                    </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 col-xs-3 col-md-3"><span class="glyphicon glyphicon-flash"></span> 姓名</label>
                     <div class="col-sm-9 col-xs-9 col-md-9">
-                    <input type="text" placeholder="请输入姓名" class="form-control" required value="" name="name">
+                        <input type="text" id="name" placeholder="请输入姓名" class="form-control" required value="" name="name">
+                    <div class="alert alert-danger" id="nameError" style="display:none">
+                        <p>你的名字不会就这么一个字吧</p>
+                    </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 col-xs-3 col-md-3" for="#"><span class="glyphicon glyphicon-earphone"></span> 联系方式</label>
                     <div class="col-sm-9 col-xs-9 col-md-9">
-                    <input type="text" placeholder="联系方式呢" class="form-control" required value="" name="contact">
+                        <input type="text" id="contact" placeholder="联系方式呢" class="form-control" required value="" name="contact">
+                    <div class="alert alert-danger" id="contactError" style="display:none">
+                        <p>手机号，QQ号，邮箱都可以</p>
+                    </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 col-xs-3 col-md-3" for="#"><span class="glyphicon glyphicon-link"></span> 意见建议</label>
                     <div class="col-sm-9 col-xs-9 col-md-9">
-                    <textarea name="contact" id=""  placeholder="意见和建议的主题内容" class="form-control" required rows="5"></textarea>
+                        <textarea name="contact" id="content"  placeholder="意见和建议的主题内容" class="form-control" required rows="5"></textarea>
+                    <div class="alert alert-danger" id="contentError" style="display:none">
+                        <p>请输入<code>[5-255]</code>个字</p>
+                    </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <button id="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-ok"></span> 提交</button>
                 </div>
             </form>
+            
             <!-- form end -->
             <!-- I think something should at here -->
             <!-- footer start  -->

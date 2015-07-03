@@ -1,0 +1,60 @@
+
+.form-before{
+	opacity: 0;
+	transform:rotate(180deg);
+}
+.footer{
+	position: relative;
+	bottom: 10px;
+	right: 10px;
+}
+//CSS loading start
+.loading-block{
+	z-index: 999;
+	position: absolute;
+	top:40%;
+	left:40%;
+	display:block;
+	p{
+		margin-top:-80px;
+	}
+}
+.loading{
+	width: 40px;
+	height: 40px;
+	background-color: green;
+	border-radius: 100%;
+	margin: 100px auto;
+	-webkit-animation:fadeOut 1.0s infinite ease-in-out;
+	-o-animation:fadeOut 1.0s infinite ease-in-out;
+	animation:fadeOut 1.0s infinite ease-in-out;
+}
+@-webkit-keyframes fadeOut{
+	from{
+		-webkit-transform:scale(0.0);
+		-ms-transform:scale(0.0);
+		-o-transform:scale(0.0);
+		transform:scale(0.0);
+	}
+	to{
+		-webkit-transform:scale(1.0);opacity:0;
+		-ms-transform:scale(1.0);opacity:0;
+		-o-transform:scale(1.0);opacity:0;
+		transform:scale(1.0);opacity:0;
+	}
+}
+@keyframes fadeOut{
+	from {
+		-webkit-transform:scale(0.0);
+		-ms-transform:scale(0.0);
+		-o-transform:scale(0.0);
+		transform:scale(0.0);
+	}
+	to {
+		-webkit-transform:scale(1.0);opacity:0;
+		-ms-transform:scale(1.0);opacity:0;
+		-o-transform:scale(1.0);opacity:0;
+		transform:scale(1.0);opacity:0;
+	}
+}
+//CSS3 loading end
