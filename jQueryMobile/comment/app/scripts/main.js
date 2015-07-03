@@ -14,24 +14,35 @@ $(function(){
 	 * @return {}   
 	 */
 	$('#submit').click(function(event){
+		//阻止事件，获取元素
 		event.preventDefault();
+		$('#submit').addClass('disable');
 		var number    = $('#number');
 		var name      = $('#name');
 		var contact   = $('#contact');
 		var content   = $('#content');
+		//检查错误
 		if (!Error(number,name,contact,content)) {
 			return true;
 		}else{
+			//界面正确调整，添加loading动画
 			success();
 			var loading = '<div class="loading-block"><div class="loading"></div><p>正在提交数据...</p></div>';
 			$('body').append(loading);
+			//表单提交
 			$.post('/post/Comment.php',{
 				number:number.val(),
 				name:name.val(),
 				contact:contact.val(),
 				content:content.val()
 			},function(data){
+				//去除loading画面，显示成功画面，最后跳转到学校首页
 				$('loading-block').remove();
+				var sucInfo = '<div class="upload-done"> <span class="glyphicon glyphicon-ok"></span> 提交成功</div>';
+				$('body').append(sucInfo);
+				setTimeout(function(){
+					window.location.href = 'http://cxxy.seu.edu.cn';
+				},3000);
 			})
 			return true;
 		}

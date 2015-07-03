@@ -1,4 +1,15 @@
 
+@mixin alert(){
+	z-index: 999;
+	position: absolute;
+	top:40%;
+	left:40%;
+	display:block;
+	p{
+		margin-top:-80px;
+	}
+}
+
 .form-before{
 	opacity: 0;
 	transform:rotate(180deg);
@@ -10,14 +21,7 @@
 }
 //CSS loading start
 .loading-block{
-	z-index: 999;
-	position: absolute;
-	top:40%;
-	left:40%;
-	display:block;
-	p{
-		margin-top:-80px;
-	}
+	@include alert();
 }
 .loading{
 	width: 40px;
@@ -58,3 +62,10 @@
 	}
 }
 //CSS3 loading end
+//Success upload start
+.upload-done{
+	padding:20px;
+	background-color:#eee;
+	@include alert();
+}
+//Success upload end
