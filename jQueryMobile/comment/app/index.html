@@ -1,3 +1,26 @@
+<!--
+                   _ooOoo_
+                  o8888888o
+                  88" . "88
+                  (| -_- |)
+                  O\  =  /O
+               ____/`---'\____
+             .'  \\|     |//  `.
+            /  \\|||  :  |||//  \
+           /  _||||| -:- |||||-  \
+           |   | \\\  -  /// |   |
+           | \_|  ''\---/''  |   |
+           \  .-\__  `-`  ___/-. /
+         ___`. .'  /--.--\  `. . __
+      ."" '<  `.___\_<|>_/___.'  >'"".
+     | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+     \  \ `-.   \_ __\ /__ _/   .-` /  /
+======`-.____`-.___\_____/___.-`____.-'======
+                   `=---='
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         佛祖保佑       永无BUG
+-->
+
 <!doctype html>
 <html class="no-js" lang="">
   <head>
@@ -12,11 +35,11 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/jquery-mobile/css/themes/default/jquery.mobile.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/test.css">
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -27,56 +50,58 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div data-role="page" id="form">
-        <div data-role="header" class="ui-header">
-            <h1 class="ui-title">东南大学成贤学院保卫办</h1>
-            <a href="#" class="ui-btn-left btn btn-primary">back</a>
-            <a href="#" class="ui-btn-right btn btn-primary">go</a>
-        </div>
-        <div role="main" class="ui-content">
-            <form action="#" method="post">
-                <div class="ui-field-contain">
-                    <label>学号：</label>
-                    <input type="text" class="" value="" name="number" required>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+                    <h1 class="text-primary">保卫办意见征集</h1>
                 </div>
-                <div class="ui-field-contain">
-                    <label>姓名：</label>
-                    <input type="text" class="text" value="" name="name" required>
-                </div>
-                <div class="ui-field-contain">
-                    <label>联系方式：</label>
-                    <input type="text" class="text" value="" name="contact" required>
-                </div>
-                <div class="ui-field-contain">
-                    <label>意见建议：</label>
-                    <textarea name="content" rows="5" required></textarea>
-                </div>
-                <button class="ui-btn" id="upLoad">upload</button>
-            </form>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <div data-role="navbar">
-                <ul>
-                    <li>
-                        <a href="#" data-icon="bars">form</a>
-                    </li>
-                    <li>
-                        <a href="#" data-icon="bars">form</a>
-                    </li>
-                    <li>
-                        <a href="#" data-icon="bars">form</a>
-                    </li>
-                </ul>
             </div>
         </div>
-    </div>
-   
+    </nav>
+    <div class="container">
+        <div class="row">
+            <form action="#" id="form" class="form from-horzional form-before" method="post">
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-3 col-md-3"><span class="glyphicon glyphicon-user"></span> 学号</label>
+                    <div class="col-sm-9 col-xs-9 col-md-9">
+                    <input type="text" placeholder="请输入学号"  class="form-control" required value="" name="number">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-3 col-md-3"><span class="glyphicon glyphicon-flash"></span> 姓名</label>
+                    <div class="col-sm-9 col-xs-9 col-md-9">
+                    <input type="text" placeholder="请输入姓名" class="form-control" required value="" name="name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-3 col-md-3" for="#"><span class="glyphicon glyphicon-earphone"></span> 联系方式</label>
+                    <div class="col-sm-9 col-xs-9 col-md-9">
+                    <input type="text" placeholder="联系方式呢" class="form-control" required value="" name="contact">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-3 col-md-3" for="#"><span class="glyphicon glyphicon-link"></span> 意见建议</label>
+                    <div class="col-sm-9 col-xs-9 col-md-9">
+                    <textarea name="contact" id=""  placeholder="意见和建议的主题内容" class="form-control" required rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button id="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-ok"></span> 提交</button>
+                </div>
+            </form>
+            <!-- form end -->
+            <!-- I think something should at here -->
+            <!-- footer start  -->
+            <footer class="footer text-right">
+                <small><!-- copyright iamhele.com --></small>
+            </footer>
 
+        </div>
+    </div>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/jquery-mobile/js/jquery.mobile.js"></script>
-    <script type="text/javascript" src="http://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.min.js"'></script>
     <!-- endbower -->
     <!-- endbuild -->
 
