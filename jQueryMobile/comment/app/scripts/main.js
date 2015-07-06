@@ -8,6 +8,7 @@ $(function(){
 		'transition':'all .9s',
 		'transform':'rotate(0deg)'
 	});
+	console.log('copyright:iamhele.com');
 	/**
 	 * 表单提交事件
 	 * @param  {Event}  阻止事件冒泡，禁止默认的提交行为
@@ -95,6 +96,4 @@ $(function(){
 		$('.form-group').removeClass('has-error').addClass('has-success');
 		$('.alert').slideUp();
 	}
-
-	console.log('copyright:iamhele.com');
 })
