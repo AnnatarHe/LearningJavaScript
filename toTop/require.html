@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>back to Top </title>
+    <style>
+        body{
+            font-family:'Monaco';
+        }
+        .content {
+            background-color: #eee;
+            height: 2000px;
+            width:800px;
+            margin: 0 auto;
+        }
+        .top {
+            background-color:#e3e3e3;
+            border:0;
+            padding: 9px 9px;
+            width: 50px;
+            height: 50px;
+            display: block;
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            line-height:50px;
+            cursor:pointer;
+            border-radius:100%;
+            transition:all .8s;
+        }
+        .top:hover{
+            color:#fff;
+            background-color:#f06454;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+    </div>
+    <div onselectstart="return false" id="back" class="top">
+      &nbsp;Top
+    </div>
+<script src="http://cdn.bootcss.com/require.js/2.1.19/require.min.js" data-main="top.js"></script>
+</body>
+</html>
