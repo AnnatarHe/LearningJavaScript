@@ -1,9 +1,7 @@
 gallery/images
 carrousel/img
 carrousel/.idea
-carousel/.sass-cache
-introduction/.sass-cache
 LongPathTool_v2.20.exe
 */node_modules
-*/sass-cache
+*/.sass-cache
 */bower_components
