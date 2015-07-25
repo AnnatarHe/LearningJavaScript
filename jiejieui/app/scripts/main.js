@@ -19,4 +19,29 @@ $(function(){
     $('#minutes').html(minutes);
     $('#seconds').html(seconds);
   };
-   });
+
+
+
+
+    console.log($('.time').display);
+  $('.date').animate({
+    'opacity':'1',
+    'margin-top':'130px'
+  },1500);
+  $('.love').click(function(){
+    console.log($('.time').display);
+    $('.static, .dynamic').toggle('slow');
+    $('#copy').toggle('slow');
+    /*$('.time').toggle(function(){*/
+      //if( $('.time').display === true ){
+        //$('.time').fadeIn();
+      //}else{
+        //$('.time').fadeOut();
+      //}
+    /*});*/
+  });
+
+
+
+
+});

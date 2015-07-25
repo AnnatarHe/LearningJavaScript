@@ -12,13 +12,14 @@
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/normalize.css/normalize.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
     
   </head>
@@ -30,31 +31,36 @@
 
     <div>
       <section class="date">
-        <div class="love">
-          loving you~
+        <div class="love" onselectstart="return false">
+          <h1>We are</h1>
         </div>
         <div class="time">
           <div class="static">
-            <p id="years"></p>year
-            <p id="months"></p>months
-            <p id="days"></p>day
+            <p id="years"></p>
+              <i>years</i>
+            <p id="months"></p>
+              <i>months</i>
+            <p id="days"></p>
+              <i>days</i>
           </div>
           <br>
           <div class="dynamic">
-            <p id="hours"></p>hours
-            <p id="minutes"></p>minutes
-            <p id="seconds"></p>seconds
+            <p id="hours"></p>
+              <i>hours</i>
+            <p id="minutes"></p>
+              <i>minutes</i>
+            <p id="seconds"></p>
+              <i>seconds</i>
           </div>
-          
+          <div id="copy">
+            <h4>你家大狗专门给你做的哦～</h4>
+            <h5>copyright: iamhele.com</h5>
+            <h5>version 1.0</h5>
+          </div>
+ 
         </div>
       </section>
     </div>
-
-
-
-
-
-
 
 
 
