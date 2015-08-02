@@ -9,6 +9,8 @@ $(function(){
   $('#months').html(months);
   $('#days').html(days);
   countTime();
+  // count hours, minutes and seconds
+  // and update every seconds
   function countTime() {
     var now = new Date();
     var hours = now.getHours();
@@ -23,7 +25,9 @@ $(function(){
 
 
 
-    console.log($('.time').display);
+  // Animate in here
+  // just using jQuery animate method
+  console.log('iamhele.com');
   $('.date').animate({
     'opacity':'1',
     'margin-top':'130px'
@@ -32,16 +36,7 @@ $(function(){
     console.log($('.time').display);
     $('.static, .dynamic').toggle('slow');
     $('#copy').toggle('slow');
-    /*$('.time').toggle(function(){*/
-      //if( $('.time').display === true ){
-        //$('.time').fadeIn();
-      //}else{
-        //$('.time').fadeOut();
-      //}
-    /*});*/
   });
-
-
 
 
 });
