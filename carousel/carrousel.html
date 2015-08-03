@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>carousel</title>
+		<link rel="stylesheet" href="stylesheets/carousel.css">
+	</head>
+	<body>
+		<div class="jquery_poster poster-main" data-settings='{
+																						"width": 1100,
+																						"height": 562,
+																						"posterWidth": 1000,
+																						"posterHeight": 562,
+																						"scale":0.9,
+																						"speed":500,
+																						"verticalAlign":"middle"
+		}'>
+			<div class="poster-btn poster-prev-btn"></div>
+			<ul class="poster-list">
+				<li class="poster-item">
+					<a href="#">
+						<img src="img/batman01.jpg" width="100%" alt="">
+					</a>
+				</li>
+				<li class="poster-item">
+					<a href="#">
+						<img src="img/batman02.jpg" width="100%" alt="">
+					</a>
+				</li>
+				<li class="poster-item">
+					<a href="#">
+						<img src="img/batman03.jpg" width="100%" alt="">
+					</a>
+				</li>
+				<li class="poster-item">
+					<a href="#">
+						<img src="img/titan01.jpeg" width="100%" alt="">
+					</a>
+				</li>
+				<li class="poster-item">
+					<a href="#">
+						<img src="img/titan02.jpg" width="100%" alt="">
+					</a>
+				</li>
+			</ul>
+			<div class="poster-btn poster-next-btn"></div>
+		</div>
+
+
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/carousel.js"></script>
+		<script>
+		var settings = {
+		}
+		Carousel.init($('.jquery_poster'));
+		</script>
+	</body>
+</html>

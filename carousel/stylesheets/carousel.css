@@ -270,46 +270,52 @@ th {
   padding: 0;
 }
 
-/* line 8, ../sass/carrousel.scss */
+/* line 8, ../sass/carousel.scss */
 .poster-main {
   position: relative;
   width: 1000px;
   height: 450px;
 }
-/* line 9, ../sass/carrousel.scss */
+/* line 9, ../sass/carousel.scss */
+.poster-main ul {
+  list-style: none;
+}
+/* line 12, ../sass/carousel.scss */
 .poster-main a {
   display: block;
+  cursor: default;
 }
-/* line 12, ../sass/carrousel.scss */
+/* line 16, ../sass/carousel.scss */
 .poster-main img {
   display: block;
 }
-/* line 17, ../sass/carrousel.scss */
+/* line 21, ../sass/carousel.scss */
 .poster-main .poster-list {
   width: 1000px;
   height: 450px;
 }
-/* line 19, ../sass/carrousel.scss */
+/* line 23, ../sass/carousel.scss */
 .poster-main .poster-list .poster-item {
   position: absolute;
   left: 0;
   top: 0;
 }
-/* line 25, ../sass/carrousel.scss */
+/* line 29, ../sass/carousel.scss */
 .poster-main .poster-btn {
   position: absolute;
   top: 0;
   width: 100px;
-  height: 450px;
+  height: 562px;
   z-index: 10;
+  cursor: pointer;
 }
-/* line 31, ../sass/carrousel.scss */
+/* line 36, ../sass/carousel.scss */
 .poster-main .poster-prev-btn {
   left: 0;
-  background: red url("img/btn_l.png") no-repeat center center;
+  background: url("../img/btn_l.png") no-repeat center center;
 }
-/* line 35, ../sass/carrousel.scss */
+/* line 40, ../sass/carousel.scss */
 .poster-main .poster-next-btn {
   right: 0;
-  background: red url("img/btn_r.png") no-repeat center center;
+  background: url("../img/btn_r.png") no-repeat center center;
 }

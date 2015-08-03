@@ -1,6 +1,6 @@
 gallery/images
-carrousel/img
-carrousel/.idea
+carousel/img
+*/.idea
 LongPathTool_v2.20.exe
 */node_modules
 */.sass-cache

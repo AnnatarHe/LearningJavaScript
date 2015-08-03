@@ -6,8 +6,12 @@
 @import "normalize";
 @import "mixed";
 .poster-main{
+	ul {
+		list-style: none;
+	}
 	a{
 		display: block;
+		cursor: default;
 	}
 	img{
 		display: block;
@@ -25,15 +29,16 @@
 	.poster-btn{
 		position: absolute;
 		top: 0;
-		@include block(100px);
+		@include block(100px, 562px);
 		z-index: 10;
+		cursor: pointer;
 	}
 	.poster-prev-btn{
 		left: 0;
-		@include img-btn("img/btn_l.png");
+		@include img-btn("../img/btn_l.png");
 	}
 	.poster-next-btn{
 		right: 0;
-		@include img-btn("img/btn_r.png");
+		@include img-btn("../img/btn_r.png");
 	}
 }

@@ -3,5 +3,5 @@
 	height:$heig;
 }
 @mixin img-btn($url){
-	background:red url($url) no-repeat center center;
+	background:url($url) no-repeat center center;
 }
