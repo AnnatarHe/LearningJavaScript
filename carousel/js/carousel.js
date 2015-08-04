@@ -7,7 +7,8 @@
 		this.prevBtn = poster.find('div.poster-prev-btn');// 上个按钮
 		this.nextBtn = poster.find('div.poster-next-btn');// 下个按钮
 		this.posterItems = poster.find('li.poster-item');// item的个数
-		this.posterFirstItem = this.posterItems.eq(0);// 第一帧
+		this.posterFirstItem = this.posterItems.first();// 第一帧
+		this.posterLastItem = this.posterItems.last();// 第一帧
 		//default settings
 		this.settings = {
 			"width": 1100,
@@ -139,11 +140,55 @@
 				});
 			});
 		},
+		/**
+		 * [carouseRotate description]
+		 * 动画效果展示，顺便切换当前卡片
+		 */
 		carouseRotate: function(dir){
+			var _this = this;
 			if (dir == 'left') {
+
+				this.posterItems.each(function(){
+					var self = $(this),
+							prev = self.prev().get(0) ? self.prev() : _this.posterLastItem,
+							width = prev.width(),
+							height = prev.height(),
+							zIndex = prev.css('zIndex'),
+							opacity = prev.css('opacity'),
+							left = prev.css('left'),
+							top = prev.css('top');
+					console.log(prev);
+					self.animate({
+						width:width,
+						height:height,
+						zIndex:zIndex,
+						opacity:opacity,
+						left:left,
+						top:top
+					});
+				});
 				console.log('use next btn');
 			}else{
-				console.log('use prev btn');
+				this.posterItems.each(function(){
+					var self = $(this),
+							next = self.next().get(0) ? self.next() : _this.posterFirstItem,
+							width = next.width(),
+							height = next.height(),
+							zIndex = next.css('zIndex'),
+							opacity = next.css('opacity'),
+							left = next.css('left'),
+							top = next.css('top');
+					console.log(next);
+					self.animate({
+						width:width,
+						height:height,
+						zIndex:zIndex,
+						opacity:opacity,
+						left:left,
+						top:top
+					});
+				});
+				console.log('use next btn');
 			};
 		}
 	};
