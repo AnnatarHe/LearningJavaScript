@@ -1,6 +1,7 @@
 ;(function(){
 	var Carousel = function(poster){
 		//save object
+		var self = this;
 		this.poster = poster;
 		this.posterItemMain = poster.find('ul.poster-list');// 主体内容区域
 		this.prevBtn = poster.find('div.poster-prev-btn');// 上个按钮
@@ -20,9 +21,17 @@
 		$.extend(this.settings,this.getSettings());
 		console.log(this.settings);
 
-
+		// execute set values and set position
 		this.setSettingValues();
 		this.setPosterPos();
+
+		//add event listener
+		this.nextBtn.click(function(){
+			self.carouseRotate('left');
+		});
+		this.prevBtn.click(function(){
+			self.carouseRotate('right');
+		});
 	};
 	Carousel.prototype = {
 		/**
@@ -79,6 +88,9 @@
 				return {};
 			}
 		},
+		/**
+		 * 设置位置
+		 */
 		setPosterPos: function(){
 			var _self      = this;
 			var sliceItems = this.posterItems.slice(1),
@@ -99,7 +111,6 @@
 				rw = rw * _self.settings.scale;
 				rh = rh * _self.settings.scale;
 				var j = i;
-
 				$(this).css({
 					zIndex:level,
 					width:rw,
@@ -118,8 +129,6 @@
 				lw = lw / _self.settings.scale;
 				lh = lh / _self.settings.scale;
 				var j = i;
-				console.log('oloop : ' + oloop);
-				console.log('opacity : ' + 1/oloop);
 				$(this).css({
 					zIndex:level,
 					width:lw,
@@ -129,6 +138,13 @@
 					top: (_self.settings.height - lh) / 2
 				});
 			});
+		},
+		carouseRotate: function(dir){
+			if (dir == 'left') {
+				console.log('use next btn');
+			}else{
+				console.log('use prev btn');
+			};
 		}
 	};
 	/**
