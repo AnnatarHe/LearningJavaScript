@@ -8,7 +8,8 @@
 		this.nextBtn = poster.find('div.poster-next-btn');// 下个按钮
 		this.posterItems = poster.find('li.poster-item');// item的个数
 		this.posterFirstItem = this.posterItems.first();// 第一帧
-		this.posterLastItem = this.posterItems.last();// 第一帧
+		this.posterLastItem = this.posterItems.last();// 最后一帧
+		this.rotateFlag = true;
 		//default settings
 		this.settings = {
 			"width": 1100,
@@ -28,10 +29,16 @@
 
 		//add event listener
 		this.nextBtn.click(function(){
-			self.carouseRotate('left');
+			if (self.rotateFlag) {
+				self.rotateFlag = false;
+				self.carouseRotate('left');
+			};
 		});
 		this.prevBtn.click(function(){
-			self.carouseRotate('right');
+			if (self.rotateFlag) {
+				self.rotateFlag = false;
+				self.carouseRotate('right');
+			};
 		});
 	};
 	Carousel.prototype = {
@@ -131,7 +138,7 @@
 				lh = lh / _self.settings.scale;
 				var j = i;
 				$(this).css({
-					zIndex:level,
+					zIndex:i,
 					width:lw,
 					height:lh,
 					opacity:1/(++j),
@@ -146,6 +153,7 @@
 		 */
 		carouseRotate: function(dir){
 			var _this = this;
+			var zIndexArr = [];
 			if (dir == 'left') {
 
 				this.posterItems.each(function(){
@@ -158,16 +166,18 @@
 							left = prev.css('left'),
 							top = prev.css('top');
 					console.log(prev);
+					zIndexArr.push(zIndex);
 					self.animate({
 						width:width,
 						height:height,
-						zIndex:zIndex,
 						opacity:opacity,
 						left:left,
 						top:top
-					});
+					},function(){ _this.rotateFlag = true});
 				});
-				console.log('use next btn');
+				this.posterItems.each(function(i){
+					$(this).css('zIndex',zIndexArr[i]);
+				});
 			}else{
 				this.posterItems.each(function(){
 					var self = $(this),
@@ -178,17 +188,23 @@
 							opacity = next.css('opacity'),
 							left = next.css('left'),
 							top = next.css('top');
-					console.log(next);
+
+					zIndexArr.push(zIndex);
 					self.animate({
 						width:width,
 						height:height,
-						zIndex:zIndex,
+						// zIndex:zIndex,
 						opacity:opacity,
 						left:left,
 						top:top
-					});
+					},function(){ 
+					_this.rotateFlag = true;
 				});
-				console.log('use next btn');
+				});
+
+				this.posterItems.each(function(i){
+					$(this).css('zIndex',zIndexArr[i]);
+				});
 			};
 		}
 	};
