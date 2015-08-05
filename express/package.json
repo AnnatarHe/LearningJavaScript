@@ -1,0 +1,19 @@
+{
+  "name": "meadowlark",
+  "version": "1.0.0",
+  "description": "help with the book 'web development with node and express'",
+  "main": "meadowlark.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "Ethan Brown",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
