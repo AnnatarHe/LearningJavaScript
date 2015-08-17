@@ -21,7 +21,7 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-    
+
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -34,30 +34,34 @@
         <div class="love" onselectstart="return false">
           <h1>We are</h1>
         </div>
-        <div class="time">
-          <div class="static">
-            <p id="years"></p>
+        <div class="time" data-type="content">
+          <div data-type="time">
+
+            <div class="static">
+              <p id="years"></p>
               <i>years</i>
-            <p id="months"></p>
+              <p id="months"></p>
               <i>months</i>
-            <p id="days"></p>
+              <p id="days"></p>
               <i>days</i>
-          </div>
-          <br>
-          <div class="dynamic">
-            <p id="hours"></p>
+            </div>
+            <br>
+            <div class="dynamic">
+              <p id="hours"></p>
               <i>hours</i>
-            <p id="minutes"></p>
+              <p id="minutes"></p>
               <i>minutes</i>
-            <p id="seconds"></p>
+              <p id="seconds"></p>
               <i>seconds</i>
+            </div>
+
           </div>
           <div id="copy">
             <h4>你家大狗专门给你做的哦～</h4>
             <h5>copyright: iamhele.com</h5>
             <h5>version 1.0</h5>
           </div>
- 
+
         </div>
       </section>
     </div>
@@ -74,7 +78,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    
+
 
     <!-- build:js scripts/getTime.js -->
     <script src="scripts/getTime.js"></script>
