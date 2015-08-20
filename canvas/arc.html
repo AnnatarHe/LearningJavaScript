@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas -- arc</title>
+</head>
+<body>
+	<canvas id="arc" width="1024" height:"600" style="display:block;border:1px solid black;margin:50px auto;"></canvas>
+
+	<script>
+		window.onload = function() {
+			var arc = document.getElementById('arc');
+
+			arc.width = 1024;
+			arc.height = 600;
+
+			var context = arc.getContext('2d');
+
+			context.lineWidth = 5;
+			context.strokeStyle = '#005588';
+
+			/**
+			 * 重点在这里
+			 * 一共有六个参数：
+			 * @param {integer} centerX 圆心的X轴坐标
+			 * @param {integer} centerY 圆心的Y轴坐标
+			 * @param {integer} radius 半径
+			 * @param {float} startingAngle 起始弧度值 0π
+			 * @param {float} endingAngle 结束弧度值   2π
+			 * @param {bool} anticlockwise 顺时针方向
+			 */
+			context.arc(300, 300, 200, 0, 1.5*Math.PI);
+
+
+			context.stroke();
+		}
+	</script>
+</body>
+</html>
