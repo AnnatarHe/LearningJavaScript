@@ -14,7 +14,11 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload');
 // Styles
 gulp.task('styles', function() {
-    return gulp.src('app/scss/main.scss')
+    return gulp.src([
+      'bower_components/normalize.css/normalize.css',
+      // 'bower_components/bootstrap/dist/css/bootstrap.css',
+      'app/scss/main.scss'
+      ])
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
