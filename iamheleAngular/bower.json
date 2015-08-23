@@ -1,0 +1,24 @@
+{
+  "name": "iamheleAngular",
+  "version": "0.0.0",
+  "homepage": "https://github.com/AnnatarHe/LearningJavaScript",
+  "authors": [
+    "AnnatarHe <hele@iamhele.com>"
+  ],
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "~1.4.4",
+    "angular-route": "~1.4.4"
+  }
+}
