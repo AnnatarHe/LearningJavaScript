@@ -14,7 +14,15 @@
 </head>
 <body>
   
+  <header>
+    hi, iam header
+  </header>
 
+  <article ng-controller="ArticleListController">
+    <ul ng-repeat="article in articles">
+      <li><a href="{{ article.id }}">{{ article.title }}</a></li>
+    </ul>
+  </article>
 
 
 
