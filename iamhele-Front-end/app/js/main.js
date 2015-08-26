@@ -1,1 +1,1 @@
-var a = hi;
+var a = 'hi';
