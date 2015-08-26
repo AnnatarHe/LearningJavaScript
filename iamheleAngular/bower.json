@@ -19,8 +19,11 @@
   ],
   "dependencies": {
     "angular-animate": "~1.4.4",
+    "angular-aria": "~1.4.4",
+    "angular-material": "~0.10.1",
     "angular-route": "~1.4.4",
-    "normalize.css": "~3.0.3",
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "material-design-icons": "~2.0.0",
+    "normalize.css": "~3.0.3"
   }
 }

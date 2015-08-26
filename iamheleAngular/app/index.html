@@ -10,6 +10,7 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
   <link rel="stylesheet" href="../assets/all.min.css">
 </head>
 <body>
@@ -17,6 +18,81 @@
   <header>
     hi, iam header
   </header>
+
+<div ng-controller="AppCtrl">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content layout-padding ng-controller="LeftCtrl">
+        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+          Close Sidenav Left
+        </md-button>
+        <p hide-md show-gt-md>
+          This sidenav is locked open on your device. To go back to the default behavior,
+          narrow your display.
+
+          <md-list ng-controller="ListCtrl">
+            <md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
+            <md-list-item ng-repeat="topping in toppings">
+              <p> {{ topping.name }} </p>
+              <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-subheader class="md-no-sticky">Clickable Items with Secondary Controls</md-subheader>
+            <md-list-item ng-click="navigateTo(setting.extraScreen, $event)" ng-repeat="setting in settings">
+              <md-icon md-svg-icon="{{setting.icon}}"></md-icon>
+              <p> {{ setting.name }} </p>
+              <md-switch class="md-secondary" ng-model="setting.enabled"></md-switch>
+            </md-list-item>
+            <md-list-item ng-click="navigateTo('data usage', $event)">
+              <md-icon md-svg-icon="cached"></md-icon>
+              <p>Data Usage</p>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-subheader class="md-no-sticky">Checkbox with Secondary Action</md-subheader>
+            <md-list-item ng-repeat="message in messages">
+              <md-checkbox ng-model="message.selected"></md-checkbox>
+              <p>{{message.title}}</p>
+              <md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
+            <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)">
+              <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+              <p>{{ person.name }}</p>
+              <md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>
+            </md-list-item>
+          </md-list>
+
+        </p>
+      </md-content>
+    </md-sidenav>
+  <md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button ng-click="toggleLeft()" class="md-icon-button" aria-label="Settings">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Toolbar with Icon Buttons</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="bower_components/material-design-icons/action/svg/design/ic_favorite_24px.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <br>
+  </md-content>
+</div>
+
+
+
+
 
   <article ng-controller="ArticleListController">
     <ul ng-repeat="article in articles">
@@ -30,9 +106,10 @@
 
 
 
-  <div ng-controller="hi">
-  </div>
-  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="../bower_components/angular-material/angular-material.min.js"></script>
+  <script src="../bower_components/angular-route/angular-route.min.js"></script>
   <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="../bower_components/angular-route/angular-route.min.js"></script>
   <script src="../assets/all.min.js"></script>
