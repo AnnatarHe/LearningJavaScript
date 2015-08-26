@@ -27,7 +27,7 @@ gulp.task('styles', function() {
 });
 // Scripts
 gulp.task('scripts', function() {
-  return gulp.src('app/js/*.js')
+  return gulp.src('app/js/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(babelify())
     .pipe(jshint())
@@ -53,7 +53,7 @@ gulp.task('default', function() {
 // Watch
 gulp.task('watch', function() {
   gulp.watch('app/styles/*.scss', ['styles']);
-  gulp.watch('app/js/*.js', ['scripts']);
+  gulp.watch('app/js/**/*.js', ['scripts']);
   gulp.watch('app/images/*', ['images']);
   livereload.listen();
   gulp.watch(['dist/**/*']).on('change', livereload.changed);
