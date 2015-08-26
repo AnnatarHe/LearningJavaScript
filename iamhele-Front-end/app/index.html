@@ -7,7 +7,68 @@
   <link rel="stylesheet" href="/dist/styles/main.min.css">
 </head>
 <body>
-  hello world
+  
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">IAMHELE</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Lists <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">About</a></li>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Admin</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div ng-view></div>
+  
+
+  <footer class="footer">
+    <div class="container footer-con">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <ul class="list-unstyled">
+            <li><p><i class="fa fa-copyright fa-lg"></i> Copyright 2014-2015 iamhele.com </p></li>
+            <li>
+              <p>Powered by <a href="http://getbootstrap.com">Bootstrap</a> &amp; <a href="http://laravel.com">laravel</a></p>
+            </li>
+            <li><p>豫ICP备15003571号</p></li>
+          </ul>
+        </div>
+        <div class="col-md-offset-3 col-md-5 col-sm-12 col-xs-12">
+          <span><i class="fa fa-phone fa-lg"></i> Contact me</span>
+            <dl class="dl-horizontal">
+              <dt><i class="fa fa-weibo fa-lg"></i> </dt>
+              <dd><p><a href="http://weibo.com/u/2165501693">@贺乐同学</a></p></dd>
+              <dt><i class="fa fa-github fa-lg"></i> </dt>
+              <dd><p><a href="https://github.com/AnnatarHe" class="text-default">AnnatarHe</a></p></dd>
+              <dt><i class="fa fa-envelope fa-lg"></i> </dt>
+              <dd><p class="text-default">hele@iamhele.com</p></dd>
+            </dl>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/angular-route/angular-route.js"></script>
   <script src="/bower_components/angular-animate/angular-animate.js"></script>

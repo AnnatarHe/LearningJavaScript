@@ -1,1 +1,54 @@
-body{}
+body {
+  padding-top: 70px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 600px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 900px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1000px;
+  }
+}
+.navbar-default{
+  opacity: .9;
+}
+.blog-title{
+  padding-top: 0px;
+}
+.blog-title h1{
+  font-size: 30px;
+}
+.blog-title .short-desc{
+  font-size: 20px;
+  color: #999;
+}
+pre code{
+      font-family: "Ubuntu Mono","Source Code Pro","Microsoft YaHei";
+      font-size: 18px;
+    }
+.article p{
+  font-family: "Ubuntu Mono","Microsoft YaHei";
+  font-size: 16px;
+  color: #8B7D6B;
+}
+.article h2{
+  font-family: "Microsoft YaHei","Ubuntu Mono";
+}
+
+/*test*/
+.footer{
+  background-color: #2d3e50;
+  color: #7f8c8d;
+  padding-bottom: 50px;
+  margin-top: 20px;
+}
+.footer-con{
+  padding-top: 35px;
+}
