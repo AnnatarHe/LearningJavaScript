@@ -1,49 +1,56 @@
 var gulp = require('gulp'),
-    browserify = require('browserify'),
-    babelify = require('babelify'),
+    browserify = require('gulp-browserify'),
+    babelify = require('gulp-babel'),
     source = require('vinyl-source-stream'),
-    // sass = require('gulp-sass'),
-    // autoprefixer = require('gulp-autoprefixer'),
-    // minifycss = require('gulp-minify-css'),
-    // jshint = require('gulp-jshint'),
-    // uglify = require('gulp-uglify'),
-    // imagemin = require('gulp-imagemin'),
-    // rename = require('gulp-rename'),
-    // concat = require('gulp-concat'),
-    // notify = require('gulp-notify'),
-    // cache = require('gulp-cache'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifycss = require('gulp-minify-css'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
+    rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
+    notify = require('gulp-notify'),
+    cache = require('gulp-cache'),
     livereload = require('gulp-livereload')
+    sourcemaps = require('gulp-sourcemaps')
     ;
 
-// gulp.task('styles', function() {
-//     return gulp.src('stylesheets/main.scss')
-//     .pipe(sass())
-//     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-//     .pipe(gulp.dest('stylesheets'))
-//     .pipe(rename({ suffix: '.min' }))
-//     .pipe(minifycss())
-//     .pipe(gulp.dest('assets'))
-//     .pipe(notify({ message: 'Styles task complete' }));
-// });
+gulp.task('styles', function() {
+    return gulp.src('stylesheets/main.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(gulp.dest('stylesheets'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(minifycss())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('assets'))
+    .pipe(notify({ message: 'Styles task complete' }));
+});
 
 gulp.task('browserify', function() {
-  return browserify('./jsx/app.js')
-         .transform(babelify)
-         .bundle()
+  return gulp.src('./jsx/app.js')
+         .pipe(browserify())
+         .pipe(babelify)
          .pipe(source('bundle.js'))
          .pipe(gulp.dest('assets/jsx'));
 });
 // Scripts
-// gulp.task('scripts', function() {
-//   return gulp.src('javascripts/*.js')
-//     .pipe(jshint())
-//     .pipe(jshint.reporter('default'))
-//     .pipe(concat('all.js'))
-//     .pipe(rename({ suffix: '.min' }))
-//     .pipe(uglify())
-//     .pipe(gulp.dest('assets'))
-//     .pipe(notify({ message: 'Scripts task complete' }));
-// });
+gulp.task('scripts', function() {
+  return gulp.src('javascripts/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(browserify())
+    .pipe(babelify())
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(concat('all.js'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('assets'))
+    .pipe(notify({ message: 'Scripts task complete' }));
+});
 // // Images
 // gulp.task('images', function() {
 //   return gulp.src('images/*')
