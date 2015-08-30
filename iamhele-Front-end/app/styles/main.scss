@@ -59,3 +59,15 @@ pre code{
 .ngAnimateView {
   transition: all .5s linear;
 }
+.ngAnimateView.ng-enter {
+  transform: scale(0.5);
+}
+.ngAnimateView.ng-enter.ng-enter-active {
+  transform: scale(1);
+}
+.ngAnimateView.ng-leave {
+  transform: scale(1);
+}
+.ngAnimateView.ng-leave.ng-leave-active {
+  transform: scale(0.5);
+}

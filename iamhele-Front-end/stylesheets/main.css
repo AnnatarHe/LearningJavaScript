@@ -51,3 +51,23 @@ pre code {
 .ngAnimateView {
   -webkit-transition: all 0.5s linear;
           transition: all 0.5s linear; }
+
+.ngAnimateView.ng-enter {
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5); }
+
+.ngAnimateView.ng-enter.ng-enter-active {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1); }
+
+.ngAnimateView.ng-leave {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1); }
+
+.ngAnimateView.ng-leave.ng-leave-active {
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5); }
