@@ -16,6 +16,12 @@ blog.config(['$routeProvider', function($routeProvider) {
     redirectTo: '/articles'
   });
 }])
+.controller('NavbarController', ['$scope', function($scope) {
+  function navbarClicked(nav) {
+    $scope.clickNow = nav;
+    console.log($scope.clickNow);
+  }
+}])
 .controller('listsController' ,['$scope', '$http', function($scope, $http) {
   let a = 1;
 }])
@@ -26,5 +32,5 @@ blog.config(['$routeProvider', function($routeProvider) {
   console.log($routeParams.articleId);
 }])
 .controller('AboutController', ['$scope', function() {
-  
+
 }])
