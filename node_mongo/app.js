@@ -5,7 +5,7 @@
  *             Author : I don't know                  ****
  ********************************************************/
  /**
-  * require some dependence module
+  * require some dependences module
   * like list
   */
 var express = require('express')

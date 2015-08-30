@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>requestAnimationFrame</title>
+	<style>
+	.foo{
+		width: 100px;
+		height: 100px;
+		background-image: -webkit-linear-gradient(top, #ccc, #888);
+		display: block;
+		position: relative;
+		left: 5px;
+	}
+	</style>
+</head>
+<body>
+	<section class="foo"></section>
+	<script>
+	'use strict'
+		var theId = 0;
+		var start = (new Date()).getTime();
+		var foo = document.getElementsByClassName('foo')[0];
+		function anim (timestamp) {
+			console.log(timestamp);
+			var timestamp = timestamp || (new Date()).getTime();
+			var step = timestamp - start;
+			var left = foo.style.left ? parseInt(foo.style.left) + 1 : 0;
+			foo.style.left = left + 'px';
+			console.log(step);
+			if (parseInt(foo.style.left) < 300) {
+				requestAnimationFrame(anim);
+			}else{
+				return;
+			}
+		}
+		if (parseInt(foo.style.left) > 30) {
+			cancelAnimationFrame(theId);
+		}else{
+			theId = requestAnimationFrame(anim);
+		}
+	</script>
+</body>
+</html>

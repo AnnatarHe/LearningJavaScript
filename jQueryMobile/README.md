@@ -1,11 +1,11 @@
-#Notes
-##Initial
+# Notes
+## Initial
 ```javascript
 $(document).on("pageinit","#page",function(){
     //do something
 });
 ```
-##Basic Page
+## Basic Page
 ```javascript
 <div data-role="page">
     <div data-role="header">
@@ -20,7 +20,7 @@ $(document).on("pageinit","#page",function(){
 </div>
 ```
 
-##Transition
+## Transition
 ```html
 <a href="#index" data-transition="slide">To Index Page</a>
 ```
@@ -32,7 +32,7 @@ $(document).on("pageinit","#page",function(){
 * fade   
 * flip   
 
-##Page Event
+## Page Event
 * pagebeforecreate   
 * pagecreate   
 * pageinit   
@@ -45,7 +45,7 @@ $(document).on("pageinit","#page",function(){
 * pagebeforehide   
 * pagehide  
 
-##Button
+## Button
 ```html
 <a href="#" class="ui-btn">i am button</a>
 ```
