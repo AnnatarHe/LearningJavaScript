@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
+    hash = require('gulp-hash'),
     concat = require('gulp-concat');
 
 gulp.task('sass', function() {
@@ -26,6 +27,8 @@ gulp.task('production-sass', function() {
         .pipe(sass())
         .pipe(minifycss())
         .pipe(sourcemaps.write('.'))
+        .pipe(hash())
+        .pipe(hash.manifest('asset-hashes.json')) 
         .pipe(gulp.dest('production/style/'))
         .pipe(notify({ message: 'production css file was successfully build!'}));
 });
@@ -61,6 +64,8 @@ gulp.task('production-js', function() {
         )
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
+        .pipe(hash())
+        .pipe(hash.manifest('asset-hashes.json')) 
         .pipe(gulp.dest('production/js/'))
         .pipe(notify({ message: 'production js file was successfully build!'}));
 });
