@@ -27,15 +27,15 @@ function foo(x = 'foo') {
 foo();
 
 // rest
-function bar(...params) {
-	let sum = 0;
-	for(let i = 0 of params){
-		sum += i;
-	}
-	return sum;
-}
+/*function bar(...params) {*/
+	//let sum = 0;
+	//for(let i = 0 of params){
+		//sum += i;
+	//}
+	//return sum;
+//}
 
-bar(3,6,9,5,4,2);
+//bar(3,6,9,5,4,2);
 
 
 let sum = (num1, num2) => num1 + num2;
