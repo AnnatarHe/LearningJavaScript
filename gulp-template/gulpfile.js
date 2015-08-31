@@ -28,6 +28,7 @@ gulp.task('production-sass', function() {
         .pipe(minifycss())
         .pipe(sourcemaps.write('.'))
         .pipe(hash())
+        .pipe(gulp.dest('production/style/'))
         .pipe(hash.manifest('asset-hashes.json')) 
         .pipe(gulp.dest('production/style/'))
         .pipe(notify({ message: 'production css file was successfully build!'}));
@@ -65,6 +66,7 @@ gulp.task('production-js', function() {
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
         .pipe(hash())
+        .pipe(gulp.dest('production/js/'))
         .pipe(hash.manifest('asset-hashes.json')) 
         .pipe(gulp.dest('production/js/'))
         .pipe(notify({ message: 'production js file was successfully build!'}));
