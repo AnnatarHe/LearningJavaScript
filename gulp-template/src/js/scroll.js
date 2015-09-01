@@ -1,5 +1,4 @@
 class scrollPlugin {
-
   /**
    * 架构函数
    * @param  {String} selector 主要框架的容器
@@ -8,7 +7,7 @@ class scrollPlugin {
   constructor( selector ) {
     this.defaultSettings = {
           selector: null,
-          speed: 50
+          speed: 30
         }
     this.defaultSettings.selector = document.querySelector(selector);
     this.listenerLeft();
@@ -33,7 +32,6 @@ class scrollPlugin {
   listenerRight() {
     const _self = this;
     const _obj = document.querySelector('.navbtn-right');
-    console.log(_obj);
     _obj.addEventListener('click', function() {
       _self.runAnimate('right');
     });
@@ -44,12 +42,14 @@ class scrollPlugin {
    * @return {null}    执行动画 
    */
   leftInterval(box) {
+    const _self = this;
     const speed = this.defaultSettings.speed;
     let _leftAnimate = setInterval(function() {
       let left = box.style.left ? parseInt(box.style.left) : 0;
       let limit = Math.abs(left);
       if (limit > window.innerWidth) {
         clearInterval(_leftAnimate);
+        _self.afterRunAnimate();
       }
 
       let _animateTimes = left - 50 + 'px';
@@ -62,12 +62,14 @@ class scrollPlugin {
    * @return {NULL}    执行动画 
    */
   rightInterval(box) {
+    const _self = this;
     const speed = this.defaultSettings.speed;
     let _rightAnimate = setInterval(function() {
       let right = box.style.right ? parseInt(box.style.right) : 0;
       let limit = Math.abs(right);
       if (limit > window.innerWidth) {
         clearInterval(_rightAnimate);
+        _self.afterRunAnimate();
       }
 
       let _animateTimes = right - 50 + 'px';
@@ -87,6 +89,13 @@ class scrollPlugin {
     }else{
       this.rightInterval(box);   
     }
+  }
+
+  afterRunAnimate() {
+    const box = document.querySelector('[data-id=cards]');
+    console.log(box.style.left);
+    box.style.left = 0 + 'px';
+    console.log(box.style.left);
   }
 }
 // 暴露接口
