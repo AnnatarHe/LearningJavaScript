@@ -42,6 +42,8 @@ scorll.prototype.runRightAnimate = function () {
  * 分做两个setIntervel， 性能或许不太好，回去用性能更好的AnimationFrame
  * 我又不支持IE10以下了 :(
  *
+ * 然后在父元素上定义了position: relative
+ * 通过调整 left 和 right 值来进行具体的动画操作
  *
  * 其他：
  *
