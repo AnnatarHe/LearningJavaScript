@@ -17,7 +17,7 @@ gulp.task('sass', function() {
         .pipe(autoprefixer())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/style/'))
-        .pipe(notify({ message: 'normalize css file was successfully build!'}));
+        .pipe(notify({ message: 'normal css file was successfully build!'}));
 });
 
 
@@ -48,7 +48,7 @@ gulp.task('js', function() {
         )
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/js/'))
-        .pipe(notify({ message: 'normalize js file was successfully build!'}));
+        .pipe(notify({ message: 'normal js file was successfully build!'}));
 });
 
 gulp.task('production-js', function() {

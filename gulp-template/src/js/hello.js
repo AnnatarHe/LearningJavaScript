@@ -1,15 +1,22 @@
-
-class scorll {
-  constructor(obj) {
-    return document.querySelector(obj);
-  }
-
-  goUpAnimate() {
-    queryAnimationFrame(function() {
-
-    })
-  }
+function scorll(selector) {
+  this.defautSettings.selector = document.querySelector(selector);
+  this.listenerLeft();
+  this.listenerRight();
+  return this;
 }
 
+scorll.prototype.defautSettings = {
+  selector: null,
+  speed : 14
+}
 
-let test = new scorll();
+scorll.prototype.listenerLeft = function() {
+  var obj = this.defautSettings.selector;
+  obj.addEvent
+};
+
+scorll.prototype.listenerRight = function() {
+  
+};
+
+var test = new scorll('.container');
