@@ -1,0 +1,101 @@
+$fontFamily: 'Ubuntu Mono';
+$cardHeight: 400px;
+$slimLine: 1px solid deeppink;
+$blodLine: 5px solid deeppink;
+
+body {
+  font-family: $fontFamily;
+}
+
+.container{
+  width: 100%;
+  margin: 25px 0;
+  &:after {
+    content: " ";
+    clear: both;
+    display: table;
+  }
+  .navbtn{
+    position: fixed;
+    top: 45%;
+    transform: scale(2);
+    background-color: #123;
+    padding: 30px 3px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .15s linear;
+    &:hover {
+      opacity: .8;
+    }
+  }
+  .navbtn-left {
+    left: 5px;
+  }
+  .navbtn-right {
+    right: 5px;
+  }
+}
+.card {
+  padding: 1.5em;
+  width: 25%;
+  margin: 0 1.5em;
+  height: $cardHeight;
+  border: $slimLine;
+  border-top: $blodLine;
+  border-bottom: $blodLine;
+  float: left;
+  position: relative;
+  transition: all .15s linear;
+  &:hover {
+    box-shadow: 5px 5px 5px #888;
+    .icon {
+      @extend .card:hover;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    bottom: -5px;
+    right: -25px;
+    width: 50px;
+    height: 50px;
+    border: 1em;
+    background-color: teal;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: -1px 1px 1px #888;
+    transition: all .35s linear;
+    h4 {
+      margin: 0;
+    }
+    &:hover {
+      transform: scale(1.7);
+    }
+  }
+
+  .desc {
+    line-height: 1.5em;
+    &:before {
+      content: " ";
+      width: 50%;
+      height: 2px;
+      background-color: #888;
+      display: block;
+      margin: 5px auto;
+    }
+  }
+  img {
+    display: block;
+    margin: 5px auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 855px) {
+  .card {
+    margin-top: 20px;
+    width: 80%;
+  }
+}

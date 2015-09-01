@@ -1,2 +1,2 @@
-let a = (id) => console.log(`hello ${id}`);
-module.export = a;
+const hello = 'hello world';
+console.log(`it just a test ${hello}`);
