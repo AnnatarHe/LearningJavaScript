@@ -5,16 +5,24 @@ $blodLine: 5px solid deeppink;
 
 body {
   font-family: $fontFamily;
+  overflow: hidden;
 }
 
 .container{
   width: 100%;
   margin: 25px 0;
-  &:after {
-    content: " ";
-    clear: both;
-    display: table;
+
+  div[data-id=cards] {
+    width:100%;
+    margin: 0 auto;
+    position: relative;
+    &:after {
+      content: " ";
+      clear: both;
+      display: table;
+    }
   }
+
   .navbtn{
     position: fixed;
     top: 45%;
@@ -24,6 +32,7 @@ body {
     color: #fff;
     cursor: pointer;
     transition: all .15s linear;
+    z-index: 5;
     &:hover {
       opacity: .8;
     }
@@ -37,7 +46,7 @@ body {
 }
 .card {
   padding: 1.5em;
-  width: 25%;
+  width: 26%;
   margin: 0 1.5em;
   height: $cardHeight;
   border: $slimLine;
