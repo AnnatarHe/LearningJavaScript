@@ -1,9 +1,9 @@
 /**
  * 架构函数，用以初始化数据
  * @param selector 类名或者ID
- * @returns {scorll} 用以链式调用
+ * @returns {scorllRun} 用以链式调用
  */
-function scorll(selector) {
+function scorllRun( selector ) {
   this.defautSettings.selector = document.querySelector(selector);
   this.listenerLeft();
   this.listenerRight();
@@ -13,7 +13,7 @@ function scorll(selector) {
  * 默认数据
  * @type {{selector: null, speed: number}}
  */
-scorll.prototype.defautSettings = {
+scorllRun.prototype.defautSettings = {
   selector: null,
   speed : 50
 }
@@ -22,14 +22,14 @@ scorll.prototype.defautSettings = {
  * 运行左边动画
  * @return void
  */
-scorll.prototype.runLeftAnimate = function () {
+scorllRun.prototype.runLeftAnimate = function () {
   this.animate('left');
 }
 /**
  * 运行右边的动画
  * @return void
  */
-scorll.prototype.runRightAnimate = function () {
+scorllRun.prototype.runRightAnimate = function () {
   this.animate('right');
 }
 /**
@@ -51,13 +51,12 @@ scorll.prototype.runRightAnimate = function () {
  *
  * @param pos
  */
-scorll.prototype.animate = function (pos) {
+scorllRun.prototype.animate = function (pos) {
   // 获取盒子
   var box = document.querySelector('[data-id=cards]');
   // 获取盒子的左边距
   var speed = this.defautSettings.speed;
 
-  console.log('run animate');
   if(pos =='left') {
     var _run = setInterval(function() {
 
@@ -65,7 +64,6 @@ scorll.prototype.animate = function (pos) {
 
       let limit = Math.abs(left);
 
-      console.log('run setInterval');
       if(limit > window.innerWidth) {
         clearInterval(_run);
       }
@@ -89,7 +87,7 @@ scorll.prototype.animate = function (pos) {
  * 左旋转按钮的事件监听
  * @return void
  */
-scorll.prototype.listenerLeft = function() {
+scorllRun.prototype.listenerLeft = function() {
   var _self = this;
   var _obj = document.querySelector('.navbtn-left');
   _obj.addEventListener('click', function () {
@@ -101,7 +99,7 @@ scorll.prototype.listenerLeft = function() {
  * 右旋转按钮的事件监听
  * @return void
  */
-scorll.prototype.listenerRight = function() {
+scorllRun.prototype.listenerRight = function() {
   var _self = this;
   var _obj = document.querySelector('.navbtn-right');
   _obj.addEventListener('click', function () {
@@ -111,6 +109,6 @@ scorll.prototype.listenerRight = function() {
 };
 /**
  * 测试数据
- * @type {scorll}
+ * @type {scorllRun}
  */
-var test = new scorll('.container');
+var test = new scorllRun('.container');
