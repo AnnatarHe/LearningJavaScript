@@ -20,8 +20,8 @@ class scrollPlugin {
    */
   listenerLeft() {
     const _self = this;
-    const _obj = document.querySelector('.navbtn-left');
-    _obj.addEventListener('click', function() {
+    const _objLeft = document.querySelector('.navbtn-left');
+    _objLeft.addEventListener('click', function() {
       _self.runAnimate('left');
     });
   }
@@ -31,8 +31,8 @@ class scrollPlugin {
    */
   listenerRight() {
     const _self = this;
-    const _obj = document.querySelector('.navbtn-right');
-    _obj.addEventListener('click', function() {
+    const _objRight = document.querySelector('.navbtn-right');
+    _objRight.addEventListener('click', function() {
       _self.runAnimate('right');
     });
   }
@@ -50,12 +50,14 @@ class scrollPlugin {
       if (limit > window.innerWidth) {
         clearInterval(_leftAnimate);
         _self.afterRunAnimate();
+        return;
       }
 
       let _animateTimes = left - 50 + 'px';
       box.style.left = _animateTimes;
-    },speed);
+    }, speed);
   }
+
   /**
    * 右边移动的动画
    * @param  {Object} box 盒子
@@ -67,14 +69,15 @@ class scrollPlugin {
     let _rightAnimate = setInterval(function() {
       let right = box.style.right ? parseInt(box.style.right) : 0;
       let limit = Math.abs(right);
-      if (limit > window.innerWidth) {
-        clearInterval(_rightAnimate);
-        _self.afterRunAnimate();
-      }
 
       let _animateTimes = right - 50 + 'px';
       box.style.right = _animateTimes;
-    },speed);
+      if (limit > window.innerWidth) {
+        clearInterval(_rightAnimate);
+        _self.afterRunAnimate();
+        return;
+      }
+    }, speed);
   }
   /**
    * 执行动画前的分发，可以说是一个代理模式吧
@@ -91,11 +94,14 @@ class scrollPlugin {
     }
   }
 
+  /**
+   * 完成第一阶段动画之后所要执行的方法，可以继续完善其动画效果
+   * @return {void} null  暂时不继续完善了。
+   */
   afterRunAnimate() {
     const box = document.querySelector('[data-id=cards]');
-    console.log(box.style.left);
-    box.style.left = 0 + 'px';
-    console.log(box.style.left);
+    box.style.left = '';
+    box.style.right = '';
   }
 }
 // 暴露接口
