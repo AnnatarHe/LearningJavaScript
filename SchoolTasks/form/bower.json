@@ -1,0 +1,22 @@
+{
+  "name": "schoolTasks2",
+  "version": "0.0.0",
+  "authors": [
+    "AnnatarHe <j692356371@126.com>"
+  ],
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}
