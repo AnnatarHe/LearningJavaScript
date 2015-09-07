@@ -1,8 +1,15 @@
 var GistBox = React.createClass({
+    
+    componentWillMount: function() {
+    $(document).ajaxStart(function(){
+    
+    }.bind(this));
+    },
 
 	getInitialState: function() {
 		return {
-			gists: []
+			gists: [],
+            ing: true
 		};
 	},
 
@@ -24,10 +31,13 @@ var GistBox = React.createClass({
 			return <Gist username={gist.username} url={gist.url} />
 		}
 		return (
-			<div>
-				<h1>Gist box</h1>
-				<GistAddForm onAdd={this.addGist} />
-				{ this.state.gists.map(newGist) }
+			<div className="container">
+				<h1 className="title">Gist box</h1>
+                <AlertHere />
+                <div className="content">
+				    <GistAddForm ing={this.state.ing} onAdd={this.addGist} />
+				    { this.state.gists.map(newGist) }
+                </div>
 			</div>
 		)
 	}

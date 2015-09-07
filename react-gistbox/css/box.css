@@ -1,0 +1,72 @@
+body {
+    font-family: "Monaco","Microsoft YaHei";
+}
+
+.container {
+    width: 50rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.container .title {
+    font-size: 3rem;
+    display: block;
+    margin: 3rem 6rem;
+    margin-bottom: 0;
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 2rem;
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+}
+.content {
+    padding: 2rem;
+    background-color: #ff4081;
+    margin: 0 6rem;
+}
+.form-inline {
+    background-color: #ff4081;
+}
+.form-inline .input {
+    padding: 1rem;
+    width:80%;
+    border-radius: 3rem;
+    font-size: 1.3rem;
+}
+.form-inline button {
+    font-size: 1.3rem;
+    margin-top: 1.8rem;
+    padding: .8rem;
+    border: none;
+    background-color: #90caf9;
+    border-radius: 5rem;
+    color:#000;
+    transition: all .35s;
+    cursor: pointer;
+}
+.form-inline button:hover {
+    box-shadow: 5px 5px 5px #888;
+}
+
+.gist-item {
+    padding: 1rem;
+    background-color: antiquewhite;
+    margin-top: 1.2rem;
+
+}
+button[type=disabled] {
+    color: aliceblue;
+}
+
+.sweet-alert {
+    padding: .8rem;
+    margin: 0 6rem;
+    text-indent: 1.5rem;
+    background-color: aqua;
+}
+.sweet-alert small {
+    font-style: italic;
+    padding: .2rem 1rem;
+    line-height: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #fff;
+}

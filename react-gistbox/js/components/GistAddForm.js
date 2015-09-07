@@ -21,8 +21,8 @@ var GistAddForm = React.createClass({
 		return (
 			<div>
 				<form className="form-inline" onSubmit={this.addGist}>
-					<input value={this.state.username} placeholder="type here" onChange={this.onChange} />
-					<button>Fetch latest gist</button>
+					<input value={this.state.username} placeholder="Github 账户名，如：AnnatarHe" className="input" onChange={this.onChange} />
+					<button className="button" onClick={this.ajaxGo} >Fetch latest gist</button>
 				</form>
 			</div>
 			);
