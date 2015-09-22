@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     source = require("vinyl-source-stream");
 
 gulp.task('sass', function() {
-  return gulp.src('src/style/*.scss')
+  return gulp.src('src/style/app.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer())
@@ -20,8 +20,10 @@ gulp.task('sass', function() {
 
 
 gulp.task('jsx', function(){
-  return browserify('src/js/app.jsx')
-        .transform(babelify)
+  return browserify('src/js/app.js')
+        .transform(babelify.configure({
+          stage:0
+        }))
         .bundle()
         .pipe(source('bundle.js'))
         .pipe(gulp.dest('dist/js/'));
@@ -37,6 +39,6 @@ gulp.task('default', function() {
  * @return {file}   按下F5刷新浏览器就可以了
  */
 gulp.task('watch', function() {
-  gulp.watch('src/style/*.scss', ['sass']);
-  gulp.watch('src/js/*.jsx', ['jsx']);
+  gulp.watch('src/style/**/*.scss', ['sass']);
+  gulp.watch('src/js/**/*.js', ['jsx']);
 });

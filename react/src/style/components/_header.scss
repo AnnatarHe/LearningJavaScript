@@ -1,0 +1,62 @@
+/**
+ * Header components stylesheets
+ */
+.header {
+	background-image: url('/app/images/hero.jpg');
+	background-position: 50% 50%;
+	background-size: cover;
+
+	.banner {
+		text-align: center;
+		color: #fff;
+		h2 {
+			margin-top: 1rem;
+			font-size: 8rem;
+			padding-bottom: 13rem;
+		}
+		h3 {
+			font-size: 1.5rem;
+		}
+	}
+
+	h1 {
+		line-height: 3rem;
+		margin-left: 2rem;
+		color: #fff;
+	}
+	.left {
+		float: left;
+	}
+
+	.right {
+		float: right;
+	}
+
+	.right-links {
+		background-color: transparent;
+		color: #000;
+
+		li {
+			display: inline-block;
+			padding: 1.3rem;
+			&:last-child {
+				a {
+					background-color: $red;
+					border-radius: .3rem;
+				}
+			}
+		}
+
+		a {
+			font-size: 1.2rem;
+			color: #fff;
+			padding: 1rem;
+			border-radius: .3rem;
+			transition: all .35s ease-in;
+
+			&:hover {
+				background-color: $red;
+			}
+		}
+	}
+}
