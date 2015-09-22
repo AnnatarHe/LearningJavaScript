@@ -1,79 +1,42 @@
 var gulp = require('gulp'),
-    browserify = require('gulp-browserify'),
-    babelify = require('gulp-babel'),
-    source = require('vinyl-source-stream'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    livereload = require('gulp-livereload')
-    sourcemaps = require('gulp-sourcemaps')
-    ;
+    autoprefixer = require('gulp-autoprefixer'),
+    sourcemaps = require('gulp-sourcemaps'),
+    browserify = require("browserify"),
+    babelify = require("babelify"),
+    source = require("vinyl-source-stream");
 
-gulp.task('styles', function() {
-    return gulp.src('stylesheets/main.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('stylesheets'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(minifycss())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('assets'))
-    .pipe(notify({ message: 'Styles task complete' }));
+gulp.task('sass', function() {
+  return gulp.src('src/style/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(autoprefixer())
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist/style/'))
+        .pipe(notify({ message: 'normal css file was successfully build!'}));
 });
 
-gulp.task('browserify', function() {
-  return gulp.src('./jsx/app.js')
-         .pipe(browserify())
-         .pipe(babelify)
-         .pipe(source('bundle.js'))
-         .pipe(gulp.dest('assets/jsx'));
+
+gulp.task('jsx', function(){
+  return browserify('src/js/app.jsx')
+        .transform(babelify)
+        .bundle()
+        .pipe(source('bundle.js'))
+        .pipe(gulp.dest('dist/js/'));
 });
-// Scripts
-gulp.task('scripts', function() {
-  return gulp.src('javascripts/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(browserify())
-    .pipe(babelify())
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(concat('all.js'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(uglify())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('assets'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+
+gulp.task('default', function() {
+  gulp.start('sass', 'jsx');
 });
-// // Images
-// gulp.task('images', function() {
-//   return gulp.src('images/*')
-//     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-//     .pipe(gulp.dest('images'))
-//     .pipe(notify({ message: 'Images task complete' }));
-// });
-// // Default task
-// gulp.task('default', function() {
-//     gulp.start('styles', 'scripts', 'images');
-// });
-// Watch
+
+/**
+ * 监视任务
+ * 监视文件的变化并运行相应的程序
+ * @return {file}   按下F5刷新浏览器就可以了
+ */
 gulp.task('watch', function() {
-  // Watch .scss files
-  // gulp.watch('stylesheets/*.scss', ['styles']);
-  // // Watch .js files
-  // gulp.watch('javascripts/*.js', ['scripts']);
-  // // Watch image files
-  // gulp.watch('images/*', ['images']);
-  // // Create LiveReload server
-  livereload.listen();
-  // watch jsx files
-  gulp.watch('./jsx/**/*',['browserify']);
-  // Watch any files in assets/, reload on change
-  gulp.watch(['assets/*']).on('change', livereload.changed);
+  gulp.watch('src/style/*.scss', ['sass']);
+  gulp.watch('src/js/*.jsx', ['jsx']);
 });
